@@ -7,7 +7,9 @@ namespace WareHouse.Data
     {
         public StorageContext(DbContextOptions<StorageContext> options):base (options) { }
 
+        public DbSet<OrderModel> Orders { get; set; }
         public DbSet<StorageModel> Storages { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
