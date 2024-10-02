@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using WareHouse.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<StorageContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("StorageDatabase")));
 
 var app = builder.Build();
 
